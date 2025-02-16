@@ -25,6 +25,7 @@ console.log(currentStep)
           router.push("/career-interests");
           break;
         default:
+          router.push("/welcome")
           break;
       }
     }
