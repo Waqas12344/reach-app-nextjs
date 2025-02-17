@@ -1,38 +1,18 @@
+'use client'
 import { useAvatarProgress } from '@/context/AvatarProgressContext';
-import { useRouter } from 'next/navigation';
+
 import React from 'react'
 import { TiTick } from 'react-icons/ti'
 
 const steps = ["Personal Details", "Avatar", "Bio", "Skills", "Career Interests"];
 const AvatarProgress = ({progress,step}) => {
-    const router = useRouter();
-  const { currentStep, setCurrentStep } = useAvatarProgress();
-console.log(currentStep)
-  const handleNext = () => {
-    if (currentStep < 5) {
-      setCurrentStep(currentStep+1 );
-      switch (currentStep+1) {
-        case 1:
-          router.push("/avatar");
-          break;
-        case 2:
-          router.push("/bio");
-          break;
-        case 3:
-          router.push("/skills");
-          break;
-        case 4:
-          router.push("/career-interests");
-          break;
-        default:
-          router.push("/welcome")
-          break;
-      }
-    }
-  };
+ 
+  const { currentStep } = useAvatarProgress();
+// console.log(currentStep)
+ 
  
   return (
-    <div className='w-[316px] mt-[100px] bg-[#2E2E30] rounded-[8px] border-[1px] border-[#565557] shadow-[#0000000A]'>
+
     <div className='p-[20px] flex flex-col justify-between'>
         {/* first div  */}
         <div>
@@ -67,14 +47,9 @@ console.log(currentStep)
      
     
         {/* third div  */}
-        <div className='w-full mt-[70px]'>
-        <button className='w-full rounded-[8px] p-[12px] bg-[#ffffff] text-[16px] font-[700] font-[manrope] leading-[16.8px]' onClick={handleNext}>
-      Next
-    </button>
-        </div>
-    
+      
     </div>
-    </div>
+ 
   )
 }
 

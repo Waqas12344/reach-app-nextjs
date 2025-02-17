@@ -1,9 +1,12 @@
 'use client'
+import { useAvatarProgress } from '@/context/AvatarProgressContext';
 import { useRouter } from 'next/navigation'
 import React from 'react'
  
 const page = () => {
   const router=useRouter();
+  const {formData} =useAvatarProgress();
+  console.log(formData)
   return (
     <div className='flex flex-col  items-center justify-center   w-full h-[100vh] overflow-hidden'>
     
