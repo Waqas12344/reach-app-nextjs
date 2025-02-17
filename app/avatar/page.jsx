@@ -12,9 +12,9 @@ const page = () => {
   
     const handleNext = () => {
       if (formData.avatar) {  
-        setCurrentStep(currentStep + 1);
+      
         nextStep();
-        console.log(formData)
+        // console.log(formData)
         router.push('/bio');
       } else {
         alert('Please upload an avatar image.');
