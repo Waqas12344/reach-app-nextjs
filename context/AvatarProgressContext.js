@@ -53,24 +53,13 @@ export const AvatarProgressProvider = ({ children }) => {
     setFormData((prev) => ({ ...prev, careerInterests: interests }));
   };
 
-  // Reset form
-  const resetForm = () => {
-    setCurrentStep(0);
-    setFormData({
-      personalDetails: {},
-      avatar: null,
-      bio: '',
-      skills: [],
-      careerInterests: []
-    });
-  };
-
+  
   return (
     <AvatarProgressContext.Provider value={{ 
       currentStep, 
       setCurrentStep,
       nextStep, 
-      // prevStep,
+  
       formData,
       setFormData,
       updatePersonalDetails,
@@ -79,7 +68,7 @@ export const AvatarProgressProvider = ({ children }) => {
       addSkill,
       removeSkill,
       updateCareerInterests,
-      resetForm
+ 
     }}>
       {children}
     </AvatarProgressContext.Provider>

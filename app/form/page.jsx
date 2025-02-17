@@ -1,15 +1,14 @@
 'use client'
 import AvatarProgress from '@/components/AvatarProgress';
  
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { useRouter } from 'next/navigation';
 import { useAvatarProgress } from '@/context/AvatarProgressContext';
 
 const page = () => {
     const router = useRouter();
-    const { currentStep, setCurrentStep,nextStep,formData, updatePersonalDetails } = useAvatarProgress();
-
-    // Local state for form inputs
+    const { currentStep, nextStep,formData, updatePersonalDetails } = useAvatarProgress();
+ 
     const [form, setForm] = useState({
         firstName: '',
         lastName: '',
@@ -18,23 +17,21 @@ const page = () => {
         zipCode: ''
     });
 
-    // Handle input change
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
-    useEffect(()=>{
-        updatePersonalDetails(form);  
-        console.log(form)
-        console.log(formData.personalDetails)
-    },[form])
-
-    // Handle "Next" click
-    const handleNext = () => {
-        if (formData.personalDetails.length > 0) {
-            setCurrentStep(currentStep + 1);
+ 
+    
+      const handleNext = () => {
+        
+        updatePersonalDetails(form); 
+        console.log('Updated FormData:', formData.personalDetails);  
+    
+       
+        if (Object.keys(formData.personalDetails).length > 0) {
             nextStep();
             router.push('/avatar');
-          }
+        }
     };
     return (
         <div className='flex py-[32px] px-[48px] gap-[162px] h-100vh'>

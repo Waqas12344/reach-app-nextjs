@@ -8,7 +8,7 @@ import Image from 'next/image';
 const page = () => {
     const router = useRouter();
     const { currentStep,nextStep, setCurrentStep,formData,updateAvatar } = useAvatarProgress();
-    const [imagePreview, setImagePreview] = useState("/image1.png"); 
+    const [imagePreview, setImagePreview] = useState("/image0.png"); 
   
     const handleNext = () => {
       if (formData.avatar) {  
@@ -51,11 +51,11 @@ const page = () => {
             </div>
             
 
-            <div className='flex flex-col w-full  items-center  justify-center'>
-                 <div className='relative '>
-                 <Image src={imagePreview} width={348} height={340} alt="Avatar Preview" className="rounded-[76px]" />
+            <div className='flex flex-col w-full  items-center  justify-center '>
+                 <div className='relative w-[378px] h-[370px] bg-contain overflow-hidden'>
+                 <Image src={imagePreview} width={348} height={340} alt="Avatar Preview" className='bg-cover rounded-[76px] '  />
 
-                 <label className='absolute bottom-0 right-0 p-[25px] bg-[#000000] rounded-full cursor-pointer'>
+                 <label className='absolute bottom-[0px] right-[0px] p-[25px] bg-[#000000] rounded-full cursor-pointer'>
             <input 
               type="file" 
               accept="image/png, image/jpeg" 
