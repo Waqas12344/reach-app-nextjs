@@ -24,7 +24,7 @@ const page = () => {
     const handleAddInterest = (interest) => {
       if (!formData.careerInterests.includes(interest)) {
         updateCareerInterests([...formData.careerInterests, interest]);
-        console.log('Updated Career Interests:', formData.careerInterests);
+        // console.log('Updated Career Interests:', formData.careerInterests);
       }
     };
   

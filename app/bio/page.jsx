@@ -12,7 +12,7 @@ const page = () => {
   
     const handleNext = () => {
       if (formData.bio.trim()) {
-        console.log(formData)
+        // console.log(formData)
         nextStep();
         router.push('/skills');
       }

@@ -15,7 +15,7 @@ const page = () => {
   
     const handleNext = () => {
       if (formData.skills.length > 0) {
-        console.log(formData)
+        // console.log(formData)
         nextStep();
         router.push('/career-interests');
       }
@@ -44,8 +44,7 @@ const page = () => {
                 <div> <img src="/logo.png" width={'57px'} height={'20px'} alt="" /></div>
                 <div className='w-[316px] mt-[100px] bg-[#2E2E30] rounded-[8px] border-[1px] border-[#565557] shadow-[#0000000A]'>
             <AvatarProgress
-            progress="60"
-            step="4"
+                 progress={(currentStep / 4) * 100} step={currentStep + 1}
             />
               <div className='w-full mt-[70px] p-[20px]'>
               <button 

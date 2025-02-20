@@ -25,7 +25,7 @@ const page = () => {
       const handleNext = () => {
         
         updatePersonalDetails(form); 
-        console.log('Updated FormData:', formData.personalDetails);  
+        // console.log('Updated FormData:', formData.personalDetails);  
     
        
         if (Object.keys(formData.personalDetails).length > 0) {

@@ -16,7 +16,6 @@ export const AvatarProgressProvider = ({ children }) => {
   // Move to next step
   const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 4));
 
- 
   // Update personal details
   const updatePersonalDetails = (data) => {
     setFormData((prev) => ({ ...prev, personalDetails: data }));
@@ -59,7 +58,6 @@ export const AvatarProgressProvider = ({ children }) => {
       currentStep, 
       setCurrentStep,
       nextStep, 
-  
       formData,
       setFormData,
       updatePersonalDetails,

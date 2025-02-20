@@ -11,10 +11,8 @@ const page = () => {
     const [imagePreview, setImagePreview] = useState("/image0.png"); 
   
     const handleNext = () => {
-      if (formData.avatar) {  
-      
+      if (formData.avatar) {   
         nextStep();
-        // console.log(formData)
         router.push('/bio');
       } else {
         alert('Please upload an avatar image.');
